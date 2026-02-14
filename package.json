@@ -8,7 +8,7 @@
     "test:ui": "playwright test tests/ui",
     "test:api": "playwright test tests/api",
     "test:smoke": "playwright test --grep @smoke",
-    "report": "playwright show-report"
+    "report:allure": "allure generate ./allure-results -o ./allure-report --clean"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/nisarmirza/qa-playwright-framework#readme",
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "allure-playwright": "^3.4.5"
   },
   "dependencies": {
     "playwright": "^1.58.2",

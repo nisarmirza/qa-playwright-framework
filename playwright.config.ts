@@ -8,9 +8,11 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
 
   reporter: [
-    ["html", { open: "never" }],
-    ["list"]
+  ["list"],
+  ["html", { open: "never" }],
+  ["allure-playwright"],
   ],
+
 
   use: {
     baseURL: "https://www.saucedemo.com",
