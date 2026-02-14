@@ -4,3 +4,4 @@ test-results
 .allure-results
 .DS_Store
 .env
+storageState.json
