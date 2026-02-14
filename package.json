@@ -8,6 +8,8 @@
     "test:ui": "playwright test tests/ui",
     "test:api": "playwright test tests/api",
     "test:smoke": "playwright test --grep @smoke",
+    "test:shard1": "playwright test --shard=1/2",
+    "test:shard2": "playwright test --shard=2/2",
     "report:allure": "allure generate ./allure-results -o ./allure-report --clean"
   },
   "repository": {

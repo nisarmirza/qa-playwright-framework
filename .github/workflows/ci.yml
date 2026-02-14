@@ -27,13 +27,20 @@ jobs:
       - name: Run tests
         run: npm test
 
-              - name: Upload Allure results
+      - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: allure-results
 
+        strategy:
+        fail-fast: false
+        matrix:
+          shard: [ "1/2", "2/2" ]
+
+      - name: Run tests (sharded)
+        run: npx playwright test --shard=${{ matrix.shard }}
 
       - name: Upload HTML report
         if: always()
