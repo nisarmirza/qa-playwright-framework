@@ -21,7 +21,19 @@ export default defineConfig({
   },
 
   projects: [
-    { name: "chromium", use: { ...devices["Desktop Chrome"] } },
-    { name: "firefox", use: { ...devices["Desktop Firefox"] } }
+  {
+    name: "setup",
+    testMatch: /.*\.setup\.ts/,
+  },
+  {
+    name: "chromium",
+    dependencies: ["setup"],
+    use: { ...devices["Desktop Chrome"], storageState: "storageState.json" },
+  },
+  {
+    name: "firefox",
+    dependencies: ["setup"],
+    use: { ...devices["Desktop Firefox"], storageState: "storageState.json" },
+  },
   ]
 });
