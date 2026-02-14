@@ -203,7 +203,7 @@ Designed to reflect real-world enterprise QA architecture.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author Nisar Mirza
 
 QA Automation Engineer focused on:
 - System reliability
