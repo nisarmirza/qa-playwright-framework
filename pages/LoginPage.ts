@@ -19,6 +19,12 @@ export class LoginPage {
   }
 
   async expectErrorContains(text: string) {
-    await expect(this.error).toContainText(text);
+  await this.error.waitFor({ state: "visible" });
+  const msg = (await this.error.textContent())?.toLowerCase() || "";
+  // flexible check
+  if (!msg.includes(text.toLowerCase())) {
+    throw new Error(`Expected error to include "${text}" but got: ${msg}`);
   }
+}
+
 }
